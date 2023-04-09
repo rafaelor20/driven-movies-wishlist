@@ -18,9 +18,7 @@ export async function updateMovie(req: Request, res: Response) {
     [movie.title, movie.release_year, movie.image_url, movie.director, movie.main_actor, movie.genre, movie.synopsis, id]);
 
     return res.status(httpStatus.ACCEPTED).send("Movie updated successfully");
-    //return res.status(201).send("Movie registered successfully" );
   } catch (err) {
     return res.status(httpStatus.INTERNAL_SERVER_ERROR).send( err.message );
-    //return res.status(500).send( err.message );
   }
 }
