@@ -1,6 +1,5 @@
 import pg from "pg";
 import dotenv from "dotenv";
-import { boolean } from "joi";
 dotenv.config();
 
 const { Pool } = pg;
