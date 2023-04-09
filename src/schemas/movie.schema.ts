@@ -7,5 +7,6 @@ export const movieSchema = Joi.object({
   director: Joi.string().max(250).required(),
   main_actor: Joi.string().max(250).required(),
   genre: Joi.string().max(250).required(),
-  synopsis: Joi.string().max(250).required()
+  synopsis: Joi.string().max(250).required(),
+  watched: Joi.boolean()
 });

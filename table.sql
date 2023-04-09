@@ -6,5 +6,6 @@ CREATE TABLE movies (
   director VARCHAR(255) NOT NULL,
   main_actor VARCHAR(255) NOT NULL,
   genre VARCHAR(255) NOT NULL,
-  synopsis VARCHAR(255) NOT NULL
+  synopsis VARCHAR(255) NOT NULL,
+  watched BOOLEAN NOT NULL DEFAULT FALSE
 );
