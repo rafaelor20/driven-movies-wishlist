@@ -6,7 +6,12 @@ export async function updateMovie(req: Request, res: Response) {
   try {
     const movie = res.locals.movie;
     const id = req.params.id;
-    console.log(movie);
+
+    const checkId = await db.query(`SELECT id from movies WHERE id = $1`, [id]);
+    if (checkId.rowCount === 0){
+      return res.status(httpStatus.EXPECTATION_FAILED).send("Wrong id");
+    }
+
     await db.query(`UPDATE movies SET
     title = $1, release_year = $2, image_url = $3, director = $4, main_actor = $5, genre = $6, synopsis = $7
     WHERE id = $8;`, 
